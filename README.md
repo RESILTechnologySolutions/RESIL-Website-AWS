@@ -1,29 +1,65 @@
 # RESIL Website AWS Deployment
 
-Professional static business website deployment for RESIL Technology Solutions using AWS, Terraform, CloudFront, S3, Route 53, ACM, and GitHub Actions.
+Secure Static Business Website Deployment on AWS with Terraform and GitHub Actions.
 
-## Project Goal
+## Live Website
 
-Rebuild resiltechnologysolutions.com as a secure, low-cost AWS-hosted static website and portfolio showcase project.
+- https://resiltechnologysolutions.com
+- https://www.resiltechnologysolutions.com
 
-## Planned Architecture
+## Project Overview
 
-- Amazon S3 for static website files
-- Amazon CloudFront for HTTPS delivery and caching
-- AWS Certificate Manager for TLS certificate
-- Amazon Route 53 for DNS
-- Terraform for infrastructure as code
-- GitHub Actions for CI/CD deployment
-- GitHub OIDC for secure AWS authentication
+This project deploys the RESIL Technology Solutions business website as a secure, low-cost static website on AWS.
+
+## Architecture
+
+    Namecheap
+      -> Route 53
+      -> CloudFront
+      -> Private S3 bucket
+
+## Technology Used
+
+- AWS S3
+- AWS CloudFront
+- AWS Certificate Manager
+- AWS Route 53
+- AWS IAM
+- Terraform
+- GitHub Actions
+- GitHub OIDC
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Deployment Summary](docs/deployment-summary.md)
+- [Security Decisions](docs/security-decisions.md)
+- [Cost Breakdown](docs/cost-breakdown.md)
+- [Troubleshooting Notes](docs/troubleshooting.md)
+
+## CI/CD
+
+Website updates are deployed automatically through GitHub Actions when changes are pushed to the main branch.
+
+Deployment flow:
+
+    Push to main
+      -> GitHub Actions
+      -> Assume AWS IAM role with OIDC
+      -> Sync website files to S3
+      -> Invalidate CloudFront cache
+
+## Security Highlights
+
+- Private S3 bucket
+- S3 public access blocked
+- CloudFront Origin Access Control
+- HTTPS through ACM
+- GitHub Actions uses OIDC instead of long-term AWS keys
+- Least-privilege IAM deployment role
 
 ## Cost Awareness
 
-This project is designed to stay low-cost.
+This project avoids always-running compute services.
 
-Expected monthly cost:
-- Route 53 hosted zone: about $0.50/month
-- ACM certificate: free
-- S3: near free for a tiny static site
-- CloudFront: likely free/near free for low traffic
-
-No AWS resources should be created without reviewing cost impact first.
+Expected recurring cost is mainly the Route 53 hosted zone, about $0.50/month.
