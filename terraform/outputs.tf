@@ -37,3 +37,8 @@ output "www_site_url" {
   description = "Final www website URL"
   value       = "https://www.${var.domain_name}"
 }
+
+output "github_actions_role_arn" {
+  description = "IAM role ARN used by GitHub Actions for CI/CD deployment"
+  value       = aws_iam_role.github_actions_deploy.arn
+}
