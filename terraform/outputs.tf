@@ -12,3 +12,8 @@ output "route53_nameservers" {
   description = "Nameservers to set at Namecheap after Route 53 hosted zone is created"
   value       = aws_route53_zone.main.name_servers
 }
+
+output "acm_certificate_arn" {
+  description = "ACM certificate ARN used by CloudFront"
+  value       = aws_acm_certificate.site.arn
+}
