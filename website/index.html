@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RESIL Technology Solutions — Cloud & IT Services | Milwaukee, WI</title>
+  <meta name="description" content="SDVOSB-certified cloud infrastructure, IT consulting, and software development services. Based in Milwaukee, WI. Serving government and commercial clients." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F2040;
+      --navy-light: #162B52;
+      --electric: #00D4FF;
+      --electric-dim: rgba(0, 212, 255, 0.15);
+      --electric-glow: rgba(0, 212, 255, 0.06);
+      --white: #FFFFFF;
+      --off-white: #E8EDF5;
+      --muted: #7A90B0;
+      --border: rgba(0, 212, 255, 0.12);
+      --border-soft: rgba(255,255,255,0.07);
+      --font-display: 'Inter', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: rgba(10, 22, 40, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: .04em;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo .logo-main { font-size: 1.1rem; letter-spacing: .08em; }
+    .nav-logo .logo-sub { font-size: 9px; font-weight: 500; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; }
+    .nav-logo span { color: var(--electric); }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--electric); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--electric);
+      border: 1px solid var(--electric);
+      padding: .5rem 1.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+    }
+
+    .nav-cta:hover { background: var(--electric); color: var(--navy); }
+
+    /* ── GRID BG ── */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(var(--border-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      padding: 8rem 4rem 5rem;
+      z-index: 1;
+    }
+
+    .hero-left { display: flex; flex-direction: column; }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-visual {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .hero-visual-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--electric-dim);
+      animation: spin-slow linear infinite;
+    }
+
+    .ring-1 { inset: 0; animation-duration: 20s; }
+    .ring-2 { inset: 10%; animation-duration: 15s; animation-direction: reverse; }
+    .ring-3 { inset: 22%; animation-duration: 25s; }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .ring-1::before, .ring-2::before, .ring-3::before {
+      content: '';
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--electric);
+      top: -4px; left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px var(--electric);
+    }
+
+    .hero-visual-center {
+      position: absolute;
+      inset: 30%;
+      border-radius: 50%;
+      background: var(--electric-dim);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual-center img {
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-cards { position: absolute; inset: 0; }
+
+    .hero-card {
+      position: absolute;
+      background: var(--navy-mid);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: .625rem .875rem;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .hero-card-label { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+    .hero-card-val { color: var(--white); font-weight: 600; font-family: var(--font-display); }
+    .hero-card-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--electric); display: inline-block; margin-right: 4px; animation: pulse 2s ease-in-out infinite; }
+
+    .card-aws { top: 8%; right: 0; }
+    .card-sdvosb { bottom: 20%; left: -5%; }
+    .card-status { top: 40%; right: -5%; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--electric);
+      border: 1px solid var(--electric-dim);
+      background: var(--electric-glow);
+      padding: .4rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      width: fit-content;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--electric);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: -.02em;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .hero-title .accent { color: var(--electric); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--electric);
+      color: var(--navy);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .875rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+    }
+
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-block;
+      color: var(--off-white);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .875rem 2rem;
+      border: 1px solid var(--border-soft);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--electric); color: var(--electric); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-soft);
+      flex-wrap: wrap;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-num span { color: var(--electric); }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: .35rem;
+    }
+
+    /* ── SECTION COMMONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 4rem;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--navy-mid); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: var(--navy-mid);
+      padding: 2rem;
+      transition: background .25s;
+    }
+
+    .service-card:hover { background: var(--navy-light); }
+
+    .service-icon {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: var(--electric-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-icon svg { width: 22px; height: 22px; stroke: var(--electric); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .service-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: .5rem; }
+    .service-desc { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+    .service-naics { font-size: 11px; color: var(--electric); margin-top: 1rem; font-family: monospace; letter-spacing: .04em; opacity: .7; }
+
+    /* ── PROJECTS ── */
+    .scroll-hint {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .scroll-hint svg { width: 14px; height: 14px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .projects-grid {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding-bottom: 1.25rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .projects-grid::-webkit-scrollbar { display: none; }
+
+    .project-card {
+      min-width: 320px;
+      max-width: 320px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      background: var(--navy-mid);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color .25s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--electric);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .project-card:hover { border-color: var(--border); transform: translateY(-3px); }
+    .project-card:hover::before { opacity: 1; }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--electric);
+      border: 1px solid var(--electric-dim);
+      background: var(--electric-glow);
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .project-status-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border-soft);
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: .5rem;
+    }
+
+    .project-name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: .625rem; }
+    .project-desc { font-size: .875rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: .375rem; }
+
+    .stack-pill {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--off-white);
+      background: var(--navy-light);
+      border: 1px solid var(--border-soft);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .375rem;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--electric);
+      text-decoration: none;
+      margin-top: 1.25rem;
+      letter-spacing: .03em;
+      opacity: .8;
+      transition: opacity .2s;
+    }
+
+    .project-link:hover { opacity: 1; }
+    .project-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy-mid); }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .about-body { font-size: .9375rem; color: var(--muted); line-height: 1.75; }
+    .about-body p + p { margin-top: 1rem; }
+    .about-body strong { color: var(--off-white); font-weight: 500; }
+    .creds-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: 1rem 1.125rem;
+      background: var(--navy);
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+    }
+
+    .cred-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--electric); flex-shrink: 0; margin-top: .35rem; }
+    .cred-dot.pending { background: #FFB347; }
+    .cred-text { font-size: .875rem; color: var(--off-white); line-height: 1.5; }
+    .cred-text span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: .875rem;
+      padding: 1rem 1.25rem;
+      background: var(--navy-mid);
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+    }
+
+    .contact-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--electric-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 16px; height: 16px; stroke: var(--electric); fill: none; stroke-width: 2; }
+    .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .contact-val { font-size: .9rem; color: var(--off-white); font-weight: 500; }
+    .contact-form { display: flex; flex-direction: column; gap: .875rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .form-group { display: flex; flex-direction: column; gap: .375rem; }
+    .form-label { font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+
+    .form-input, .form-select, .form-textarea {
+      background: var(--navy-mid);
+      border: 1px solid var(--border-soft);
+      border-radius: 4px;
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: .875rem;
+      padding: .625rem .875rem;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--electric); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+    .form-select option { background: var(--navy-mid); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 4rem;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--muted); }
+    .footer-naics { font-size: 11px; font-family: monospace; color: var(--muted); opacity: .6; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp .7s ease both; }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .22s; }
+    .delay-3 { animation-delay: .36s; }
+    .delay-4 { animation-delay: .5s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
+      .hero-right { display: none; }
+      .hero-stats { gap: 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <span class="logo-main">RESIL<span>.</span></span>
+      <span class="logo-sub">Technology Solutions</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-badge fade-up">SDVOSB · VOSB CERTIFIED · MILWAUKEE, WI</div>
+      <h1 class="hero-title fade-up delay-1">
+        Cloud &amp; IT<br/>
+        solutions built<br/>
+        to <span class="accent">scale.</span>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        RESIL Technology Solutions delivers cloud infrastructure, software development, and IT consulting services to government and commercial clients across Wisconsin and beyond.
+      </p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#projects" class="btn-primary">View portfolio</a>
+        <a href="#contact" class="btn-secondary">Work with us</a>
+      </div>
+      <div class="hero-stats fade-up delay-4">
+        <div class="stat-item">
+          <div class="stat-num">6<span>+</span></div>
+          <div class="stat-label">NAICS codes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span>SDVOSB / VOSB</span></div>
+          <div class="stat-label">SBA CERTIFIED</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">AWS<span> · </span>Azure</div>
+          <div class="stat-label">Cloud platforms</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right fade-up delay-2">
+      <div class="hero-visual">
+        <div class="hero-visual-ring ring-1"></div>
+        <div class="hero-visual-ring ring-2"></div>
+        <div class="hero-visual-ring ring-3"></div>
+        <div class="hero-visual-center">
+          <img src="RESILLogo2.png" alt="RESIL Technology Solutions" />
+        </div>
+        <div class="hero-cards">
+          <div class="hero-card card-aws">
+            <div class="hero-card-label">Platform</div>
+            <div class="hero-card-val">AWS · Azure · GCP</div>
+          </div>
+          <div class="hero-card card-sdvosb">
+            <div class="hero-card-label">Certification</div>
+            <div class="hero-card-val"><span class="hero-card-dot"></span>SDVOSB / VOSB Certified</div>
+          </div>
+          <div class="hero-card card-status">
+            <div class="hero-card-label">Status</div>
+            <div class="hero-card-val"><span class="hero-card-dot"></span>Active · Milwaukee, WI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">Core services</h2>
+    <p class="section-desc">End-to-end technology services for organizations that need reliable, scalable infrastructure and modern software solutions.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4 4 0 003 15z"/></svg></div>
+        <div class="service-name">Cloud Infrastructure</div>
+        <div class="service-desc">Architecture, deployment, and management of cloud environments on AWS, Azure, and GCP. Infrastructure as Code using Terraform. Cost optimization and security hardening.</div>
+        <div class="service-naics">NAICS 518210</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="service-name">Custom Software Development</div>
+        <div class="service-desc">Full-stack web and API development. Serverless architectures, microservices, and CI/CD pipeline implementation tailored to your operational needs.</div>
+        <div class="service-naics">NAICS 541511 · 541512</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="service-name">IT Consulting &amp; Systems Integration</div>
+        <div class="service-desc">Technology roadmap planning, vendor evaluation, and legacy system modernization. Bridging the gap between business goals and technical execution.</div>
+        <div class="service-naics">NAICS 541519 · 541513</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="service-name">Technical Training &amp; Enablement</div>
+        <div class="service-desc">Hands-on cloud and DevOps training for technical teams. Curriculum development and instructor-led workshops aligned to industry certifications.</div>
+        <div class="service-naics">NAICS 611420</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Projects &amp; work</h2>
+    <p class="section-desc">Hands-on cloud and software projects demonstrating real-world technical capability. Updated continuously as new work is completed.</p>
+
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Scroll to see more projects
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div><span class="project-tag">Cloud · AWS · Python</span><span class="project-status-badge" style="color:#1D9E75;border-color:#1D9E75;">Live</span></div>
+        <div class="project-name">Cloud Cost & Resource Monitoring Dashboard</div>
+        <div class="project-desc">Full stack web app connecting to AWS Cost Explorer API, displaying 30 days of real-time billing data grouped by service in interactive charts. Built on a 3-tier architecture with AWS IAM authentication.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Flask</span>
+          <span class="stack-pill">Boto3</span>
+          <span class="stack-pill">AWS Cost Explorer</span>
+          <span class="stack-pill">AWS IAM</span>
+          <span class="stack-pill">Chart.js</span>
+          <span class="stack-pill">JavaScript</span>
+        </div>
+        <a href="https://github.com/RESILTechnologySolutions/resil-cloud-dashboard" class="project-link" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div><span class="project-tag">AI · SaaS · Full Stack</span><span class="project-status-badge" style="color:#1D9E75;border-color:#1D9E75;">Live</span></div>
+        <div class="project-name">Math Tutor TG</div>
+        <div class="project-desc">Live AI-powered math tutoring web app providing step-by-step math help with user accounts, free/premium usage limits, file upload support, 2FA login security, and Stripe-based subscription access.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Flask</span>
+          <span class="stack-pill">SQLite</span>
+          <span class="stack-pill">Gemini API</span>
+          <span class="stack-pill">Stripe</span>
+          <span class="stack-pill">Flask-Login</span>
+          <span class="stack-pill">JavaScript</span>
+        </div>
+        <a href="http://www.mathtutortg.org" class="project-link" target="_blank" rel="noopener">
+          View live app
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div><span class="project-tag">Serverless · AWS · Python</span><span class="project-status-badge" style="color:#1D9E75;border-color:#1D9E75;">Live</span></div>
+        <div class="project-name">Serverless REST API</div>
+        <div class="project-desc">Fully serverless REST API deployed on AWS with zero server management. Supports creating and retrieving items via HTTP endpoints. Built with Lambda, API Gateway, and DynamoDB — auto-scaling, pay-per-request architecture.</div>
+        <div class="project-stack">
+          <span class="stack-pill">AWS Lambda</span>
+          <span class="stack-pill">API Gateway</span>
+          <span class="stack-pill">DynamoDB</span>
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Boto3</span>
+          <span class="stack-pill">IAM</span>
+        </div>
+        <a href="https://github.com/RESILTechnologySolutions/resil-serverless-api" class="project-link" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-card">
+        <div><span class="project-tag">IaC · Terraform</span><span class="project-status-badge">Planned</span></div>
+        <div class="project-name">Multi-Environment Infrastructure as Code</div>
+        <div class="project-desc">Terraform modules provisioning a full AWS environment — VPC, subnets, security groups, EC2, and RDS — across dev, staging, and production workspaces.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Terraform</span>
+          <span class="stack-pill">AWS VPC</span>
+          <span class="stack-pill">EC2</span>
+          <span class="stack-pill">RDS</span>
+          <span class="stack-pill">S3</span>
+        </div>
+        <a href="https://github.com/RESILTechnologySolutions" class="project-link" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div><span class="project-tag">Containers · Kubernetes</span><span class="project-status-badge">Planned</span></div>
+        <div class="project-name">Containerized Application Deployment</div>
+        <div class="project-desc">Dockerized multi-service application deployed to AWS ECS. Includes load balancing, auto-scaling configuration, and centralized CloudWatch logging.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Docker</span>
+          <span class="stack-pill">AWS ECS</span>
+          <span class="stack-pill">CloudWatch</span>
+          <span class="stack-pill">ALB</span>
+        </div>
+        <a href="https://github.com/RESILTechnologySolutions" class="project-link" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-label">About</div>
+    <h2 class="section-title">RESIL Technology Solutions</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>RESIL Technology Solutions is a <strong>Service-Disabled Veteran-Owned Small Business (SDVOSB)</strong> headquartered in Milwaukee, Wisconsin. Founded in 2026, we specialize in cloud infrastructure, software development, and IT consulting services for both government and commercial clients.</p>
+        <p>As a sole-owner firm actively pursuing federal subcontracting opportunities, we bring a focused, hands-on approach to every engagement. We work closely with prime contractors in the Milwaukee metro area and across Wisconsin to deliver technical capability where it's needed most.</p>
+        <p>Our team combines <strong>computer science fundamentals</strong>, active cloud platform experience, and a commitment to continuous learning — backed by an ongoing certification pathway in AWS, Terraform, and CompTIA cloud technologies.</p>
+        <p>We hold six active NAICS codes covering cloud computing, custom software, IT consulting, network systems integration, data processing, and technical training.</p>
+      </div>
+      <ul class="creds-list">
+        <li class="cred-item"><div class="cred-dot"></div><div class="cred-text">SDVOSB / VOSB Verified<span>Certified via SBA VetCert Program</span></div></li>
+        <li class="cred-item"><div class="cred-dot"></div><div class="cred-text">SAM.gov Registered<span>Registration active</span></div></li>
+        <li class="cred-item"><div class="cred-dot"></div><div class="cred-text">LLC Established — Wisconsin<span>Active since April 30, 2026</span></div></li>
+        <li class="cred-item"><div class="cred-dot pending"></div><div class="cred-text">AWS Cloud Practitioner<span>Target: Q3 2026</span></div></li>
+        <li class="cred-item"><div class="cred-dot pending"></div><div class="cred-text">AWS Solutions Architect – Associate<span>Target: Q4 2026</span></div></li>
+        <li class="cred-item"><div class="cred-dot pending"></div><div class="cred-text">HashiCorp Terraform Associate<span>Target: Q1 2027</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="section-desc">Interested in subcontracting opportunities or need IT services? Reach out — we respond within one business day.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-label">Email</div><div class="contact-val">contact@resiltechnologysolutions.com</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-label">Location</div><div class="contact-val">Milwaukee, Wisconsin</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="contact-label">Response time</div><div class="contact-val">Within 1 business day</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <div><div class="contact-label">Business type</div><div class="contact-val">SDVOSB · Small Business</div></div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First name</label>
+            <input class="form-input" type="text" id="fname" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last name</label>
+            <input class="form-input" type="text" id="lname" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-input" type="email" id="email" placeholder="jane@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="org">Organization</label>
+          <input class="form-input" type="text" id="org" placeholder="Company or agency name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="interest">Area of interest</label>
+          <select class="form-select" id="interest">
+            <option value="">Select one</option>
+            <option>Cloud infrastructure</option>
+            <option>Software development</option>
+            <option>IT consulting</option>
+            <option>Subcontracting opportunity</option>
+            <option>Technical training</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" placeholder="Tell us about your project or opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;text-align:center;border:none;cursor:pointer;font-size:13px;">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div><img src="RESILLogo2.png" alt="RESIL Technology Solutions" style="height:32px;width:auto;" /></div>
+    <div class="footer-copy">© 2026 RESIL Technology Solutions LLC · Milwaukee, WI · All rights reserved</div>
+    <div class="footer-naics">NAICS: 541512 · 541519 · 541511 · 541513 · 518210 · 611420</div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Message sent ✓';
+      btn.style.background = '#1D9E75';
+      btn.style.color = '#fff';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send message';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.style.opacity = '1';
+          el.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .project-card, .cred-item, .contact-row').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .5s ease, transform .5s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
+
