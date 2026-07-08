@@ -12,4 +12,5 @@ Thumbs.db
 .idea/
 
 # Logs
-*.log
+*.log*:Zone.Identifier
+*:mshield
