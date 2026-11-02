@@ -1,604 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>RESIL Technology Solutions | Cloud &amp; IT Services — Milwaukee, WI</title>
-  <meta name="description" content="SBA-certified SDVOSB providing cloud infrastructure, DevOps support, and IT consulting from Milwaukee, Wisconsin. Serving prime contractors and public-sector clients." />
-  <meta property="og:title" content="RESIL Technology Solutions — Cloud &amp; IT Services" />
-  <meta property="og:description" content="SBA-certified SDVOSB delivering cloud infrastructure, DevOps support, and IT consulting from Milwaukee, WI." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://resiltechnologysolutions.com" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-  <style>
-    /* Layout: left-aligned, document-grade. One deep ink, cool neutrals, a single muted
-       brass accent spent on the credential plate. Franklin for voice/UI, serif for prose,
-       mono for the literal registration codes. */
-    :root {
-      --paper:      #F3F5F8;
-      --surface:    #FFFFFF;
-      --surface-2:  #EDF0F4;
-      --ink:        #15233A;
-      --ink-2:      #2C3B54;
-      --muted:      #5C6C84;
-      --line:       #E0E5EC;
-      --line-2:     #C9D1DC;
-      --accent:     #8A6A38;
-      --accent-txt: #6F5329;
-      --accent-soft:#EFE7DA;
-      --good:       #1C7F55;
-      --good-soft:  #DCEFE6;
-      --warn:       #9A6B14;
-      --warn-soft:  #F3E7CF;
-      --font-ui:    'Libre Franklin', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      --font-prose: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-      --font-mono:  'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
-      color-scheme: light;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --paper:      #0E1826;
-        --surface:    #152334;
-        --surface-2:  #1B2B3E;
-        --ink:        #EAEFF6;
-        --ink-2:      #CBD6E4;
-        --muted:      #93A2B8;
-        --line:       #24344A;
-        --line-2:     #334663;
-        --accent:     #C79A5B;
-        --accent-txt: #D7AE72;
-        --accent-soft:#2A2518;
-        --good:       #4FBF8E;
-        --good-soft:  #15301F;
-        --warn:       #D7A64A;
-        --warn-soft:  #312710;
-        color-scheme: dark;
-      }
-    }
-    :root[data-theme="dark"] {
-      --paper:      #0E1826;
-      --surface:    #152334;
-      --surface-2:  #1B2B3E;
-      --ink:        #EAEFF6;
-      --ink-2:      #CBD6E4;
-      --muted:      #93A2B8;
-      --line:       #24344A;
-      --line-2:     #334663;
-      --accent:     #C79A5B;
-      --accent-txt: #D7AE72;
-      --accent-soft:#2A2518;
-      --good:       #4FBF8E;
-      --good-soft:  #15301F;
-      --warn:       #D7A64A;
-      --warn-soft:  #312710;
-      color-scheme: dark;
-    }
+[RESIL Technology Solutions **RESIL**Technology Solutions](#top)
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--font-ui);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
+- [Capabilities](#capabilities)
+- [Portfolio](#portfolio)
+- [The firm](#firm)
+- [Capability statement](CapabilityStatement.pdf)
 
-    .wrap {
-      width: 100%;
-      max-width: 1180px;
-      margin-inline: auto;
-      padding-left: max(20px, env(safe-area-inset-left, 0px));
-      padding-right: max(20px, env(safe-area-inset-right, 0px));
-    }
-    .section { padding-block: clamp(3.5rem, 7vw, 6rem); }
-    .band { background: var(--surface); border-block: 1px solid var(--line); }
+[Contact](#contact)
 
-    /* ── NAV ── */
-    header.nav {
-      position: sticky; top: 0; z-index: 50;
-      background: color-mix(in srgb, var(--paper) 88%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; height: 68px;
-    }
-    .brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; }
-    .brand-mark {
-      width: 34px; height: 34px; flex-shrink: 0;
-      border: 1.5px solid var(--accent); border-radius: 6px;
-      display: grid; place-items: center;
-      font-family: var(--font-ui); font-weight: 800; font-size: 17px;
-      color: var(--accent-txt); letter-spacing: -.02em;
-    }
-    .brand-name { display: flex; flex-direction: column; line-height: 1.05; }
-    .brand-name b { font-weight: 800; font-size: 1.02rem; letter-spacing: .02em; color: var(--ink); }
-    .brand-name small { font-size: 9.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+Service-Disabled Veteran-Owned Small Business
 
-    .nav-links { display: flex; align-items: center; gap: 1.9rem; list-style: none; margin: 0; padding: 0; }
-    .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none;
-      padding: .3rem 0; border-bottom: 1.5px solid transparent; transition: color .15s, border-color .15s;
-    }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent-txt); border-color: var(--accent); }
-    .nav-cta {
-      font-family: var(--font-ui); font-weight: 600; font-size: 13.5px;
-      color: var(--surface); background: var(--ink);
-      padding: .55rem 1.15rem; border-radius: 6px; text-decoration: none;
-      transition: background .15s, transform .12s;
-    }
-    .nav-cta:hover { background: var(--ink-2); }
-    .nav-toggle { display: none; }
+# Cloud and IT capability for primes and agencies.
 
-    /* ── HERO ── */
-    .hero-grid {
-      display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: center;
-    }
-    .kicker {
-      display: inline-flex; align-items: center; gap: .6rem;
-      font-size: 12.5px; font-weight: 600; letter-spacing: .04em; color: var(--accent-txt);
-      margin-bottom: 1.4rem;
-    }
-    .kicker::before { content: ""; width: 26px; height: 1.5px; background: var(--accent); display: inline-block; }
-    h1.hero-title {
-      font-family: var(--font-ui); font-weight: 800;
-      font-size: clamp(2.3rem, 4.6vw, 3.7rem); line-height: 1.05; letter-spacing: -.02em;
-      color: var(--ink); margin: 0 0 1.3rem; text-wrap: balance; max-width: 14ch;
-    }
-    .hero-sub {
-      font-family: var(--font-prose); font-size: 1.17rem; line-height: 1.65;
-      color: var(--ink-2); max-width: 54ch; margin: 0 0 2.1rem;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2.2rem; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      font-family: var(--font-ui); font-weight: 600; font-size: 14.5px;
-      padding: .8rem 1.5rem; border-radius: 7px; text-decoration: none;
-      border: 1.5px solid transparent; cursor: pointer; transition: background .15s, border-color .15s, color .15s;
-    }
-    .btn-primary { background: var(--ink); color: var(--surface); }
-    .btn-primary:hover { background: var(--ink-2); }
-    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent-txt); }
-    .btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+RESIL Technology Solutions is an SBA-certified SDVOSB based in Milwaukee, Wisconsin. We deliver cloud infrastructure, DevOps support, and IT consulting to prime contractors and public-sector clients, with direct, founder-led attention on every engagement.
 
-    .hero-assure {
-      display: flex; flex-wrap: wrap; gap: 1.6rem;
-      padding-top: 1.6rem; border-top: 1px solid var(--line);
-      font-size: 13.5px; color: var(--muted);
-    }
-    .hero-assure span { display: inline-flex; align-items: center; gap: .5rem; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); flex-shrink: 0; }
+[Download capability statement](CapabilityStatement.pdf) [Get in touch](#contact)
 
-    /* ── CREDENTIAL PLATE ── */
-    .plate {
-      background: var(--surface); border: 1px solid var(--line-2); border-radius: 10px;
-      overflow: hidden; box-shadow: 0 1px 2px rgba(21,35,58,.04);
-    }
-    .plate-head {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .95rem 1.25rem; background: var(--surface-2); border-bottom: 1px solid var(--line-2);
-    }
-    .plate-head h2 { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
-    .seal { width: 26px; height: 26px; border: 1.5px solid var(--accent); border-radius: 50%; display: grid; place-items: center; }
-    .seal span { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-    .plate-body { padding: .35rem 1.25rem 1.1rem; }
-    .pl-row { display: grid; grid-template-columns: 112px 1fr; gap: .9rem; align-items: baseline; padding: .72rem 0; border-bottom: 1px solid var(--line); }
-    .pl-row:last-child { border-bottom: 0; }
-    .pl-k { font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
-    .pl-v { font-size: 14px; color: var(--ink); font-weight: 500; }
-    .pl-v.code { font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
-    .pl-v .cert-badge { display: inline-flex; align-items: center; gap: .4rem; }
-    .naics-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
-    .naics-tags b {
-      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
-      padding: .12rem .45rem; border-radius: 4px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line);
-    }
-    .naics-tags b.primary { background: var(--accent-soft); color: var(--accent-txt); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+SBA-certified SDVOSB / VOSB Registered in SAM.gov Responds within one business day
 
-    /* ── SECTION HEADINGS ── */
-    .sec-kicker { font-size: 12.5px; font-weight: 600; letter-spacing: .06em; color: var(--accent-txt); margin-bottom: .7rem; }
-    .sec-title { font-family: var(--font-ui); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.12; letter-spacing: -.015em; color: var(--ink); margin: 0 0 .9rem; text-wrap: balance; }
-    .sec-intro { font-family: var(--font-prose); font-size: 1.1rem; line-height: 1.6; color: var(--ink-2); max-width: 60ch; margin: 0 0 2.8rem; }
+## Registration & Certifications
 
-    /* ── CAPABILITIES ── */
-    .cap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-    .cap { background: var(--surface); padding: 1.9rem 1.8rem; display: flex; flex-direction: column; gap: .7rem; transition: background .18s; }
-    .cap:hover { background: var(--surface-2); }
-    .cap-ico { width: 42px; height: 42px; border-radius: 8px; background: var(--accent-soft); display: grid; place-items: center; margin-bottom: .3rem; }
-    .cap-ico svg { width: 21px; height: 21px; stroke: var(--accent-txt); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .cap h3 { font-family: var(--font-ui); font-weight: 700; font-size: 1.12rem; color: var(--ink); margin: 0; }
-    .cap p { font-family: var(--font-prose); font-size: .97rem; line-height: 1.58; color: var(--muted); margin: 0; }
-    .cap .codes { margin-top: auto; padding-top: .7rem; display: flex; flex-wrap: wrap; gap: .3rem; }
-    .cap .codes b { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; color: var(--accent-txt); letter-spacing: .02em; }
-    .cap .codes b + b::before { content: "·"; color: var(--line-2); margin-right: .3rem; }
+Certification
 
-    /* ── PORTFOLIO ── */
-    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; }
-    .proj { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.6rem; display: flex; flex-direction: column; transition: border-color .18s, transform .18s; }
-    .proj:hover { border-color: var(--line-2); transform: translateY(-2px); }
-    .proj-top { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: 1rem; }
-    .proj-area { font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: var(--accent-txt); }
-    .status { font-size: 11px; font-weight: 600; letter-spacing: .03em; padding: .18rem .55rem; border-radius: 20px; white-space: nowrap; }
-    .status.live { color: var(--good); background: var(--good-soft); }
-    .status.prog { color: var(--warn); background: var(--warn-soft); }
-    .proj h3 { font-family: var(--font-ui); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin: 0 0 .55rem; }
-    .proj p { font-family: var(--font-prose); font-size: .94rem; line-height: 1.55; color: var(--muted); margin: 0 0 1.1rem; }
-    .stack { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: auto; }
-    .stack span { font-family: var(--font-mono); font-size: 11px; color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--line); padding: .14rem .5rem; border-radius: 4px; }
-    .proj-link { display: inline-flex; align-items: center; gap: .4rem; font-size: 13px; font-weight: 600; color: var(--accent-txt); text-decoration: none; margin-top: 1.1rem; }
-    .proj-link:hover { text-decoration: underline; }
-    .proj-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+SDVOSB / VOSB · SBA-certified
 
-    /* ── FIRM ── */
-    .firm-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: start; }
-    .firm-body p { font-family: var(--font-prose); font-size: 1.05rem; line-height: 1.68; color: var(--ink-2); margin: 0 0 1.1rem; }
-    .firm-body p:last-child { margin-bottom: 0; }
-    .firm-body strong { color: var(--ink); font-weight: 600; }
-    .road { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
-    .road-head { padding: .9rem 1.2rem; border-bottom: 1px solid var(--line); font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); background: var(--surface-2); }
-    .road-item { display: flex; align-items: flex-start; gap: .75rem; padding: .9rem 1.2rem; border-bottom: 1px solid var(--line); }
-    .road-item:last-child { border-bottom: 0; }
-    .road-mark { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: .15rem; display: grid; place-items: center; }
-    .road-mark.done { background: var(--good-soft); }
-    .road-mark.done svg { width: 11px; height: 11px; stroke: var(--good); fill: none; stroke-width: 2.4; }
-    .road-mark.pend { border: 1.5px dashed var(--line-2); }
-    .road-txt b { display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
-    .road-txt span { font-size: 12.5px; color: var(--muted); }
+UEI
 
-    /* ── CONTACT ── */
-    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 3.5rem; align-items: start; }
-    .cinfo { display: flex; flex-direction: column; gap: .8rem; }
-    .crow { display: flex; align-items: center; gap: .85rem; padding: .95rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
-    .crow-ico { width: 34px; height: 34px; border-radius: 7px; background: var(--accent-soft); display: grid; place-items: center; flex-shrink: 0; }
-    .crow-ico svg { width: 16px; height: 16px; stroke: var(--accent-txt); fill: none; stroke-width: 1.8; }
-    .crow small { display: block; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 1px; }
-    .crow .cval { font-size: 14.5px; font-weight: 500; color: var(--ink); word-break: break-word; }
-    .crow .cval a { text-decoration: none; }
-    .crow .cval a:hover { color: var(--accent-txt); }
-    .crow .cval.code { font-family: var(--font-mono); font-size: 13px; }
+VSEPRK1QDU39
 
-    form.contact { display: flex; flex-direction: column; gap: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.8rem; }
-    .f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .fg { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
-    .fg label { font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
-    .fg input, .fg select, .fg textarea {
-      font-family: var(--font-ui); font-size: 14.5px; color: var(--ink);
-      background: var(--paper); border: 1px solid var(--line-2); border-radius: 7px;
-      padding: .7rem .85rem; outline: none; width: 100%; transition: border-color .15s, box-shadow .15s;
-    }
-    .fg textarea { resize: vertical; min-height: 108px; font-family: var(--font-prose); }
-    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-    .fg input::placeholder, .fg textarea::placeholder { color: var(--muted); }
-    form.contact button { margin-top: .3rem; justify-content: center; width: 100%; border: none; }
+CAGE
 
-    /* ── FOOTER ── */
-    footer.site { border-top: 1px solid var(--line); background: var(--surface); }
-    .foot-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.3rem; padding-block: 2.2rem; }
-    .foot-brand { display: inline-flex; align-items: center; gap: .6rem; }
-    .foot-copy { font-size: 12.5px; color: var(--muted); }
-    .foot-reg { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); line-height: 1.7; text-align: right; }
-    .foot-reg span { color: var(--accent-txt); }
+20GL4
 
-    :where(a, button, input, select, textarea):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+SAM.gov
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 2.6rem; }
-      .firm-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-      .cap-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .foot-reg { text-align: left; }
-    }
-    @media (max-width: 520px) {
-      .f2 { grid-template-columns: 1fr; }
-      .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * { scroll-behavior: auto !important; transition: none !important; }
-    }
-  </style>
-</head>
-<body>
+Registered
 
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="brand" aria-label="RESIL Technology Solutions home">
-        <span class="brand-mark">R</span>
-        <span class="brand-name"><b>RESIL</b><small>Technology Solutions</small></span>
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#firm">The firm</a></li>
-          <li><a href="CapabilityStatement.pdf" target="_blank" rel="noopener">Capability statement</a></li>
-        </ul>
-      </nav>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </div>
-  </header>
+NAICS
 
-  <main id="top">
+**541512****541511****541513****541519****518210****611420**
 
-    <!-- HERO -->
-    <section class="section">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="kicker">Service-Disabled Veteran-Owned Small Business</span>
-          <h1 class="hero-title">Cloud and IT capability for primes and agencies.</h1>
-          <p class="hero-sub">RESIL Technology Solutions is an SBA-certified SDVOSB based in Milwaukee, Wisconsin. We deliver cloud infrastructure, DevOps support, and IT consulting to prime contractors and public-sector clients, with direct, founder-led attention on every engagement.</p>
-          <div class="hero-actions">
-            <a href="CapabilityStatement.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-              Download capability statement
-              <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
-            </a>
-            <a href="#contact" class="btn btn-ghost">Get in touch</a>
-          </div>
-          <div class="hero-assure">
-            <span><span class="dot"></span>SBA-certified SDVOSB / VOSB</span>
-            <span><span class="dot"></span>Registered in SAM.gov</span>
-            <span><span class="dot"></span>Responds within one business day</span>
-          </div>
-        </div>
+Established
 
-        <aside class="plate" aria-label="Registration and certifications">
-          <div class="plate-head">
-            <h2>Registration &amp; Certifications</h2>
-            <span class="seal" aria-hidden="true"><span></span></span>
-          </div>
-          <div class="plate-body">
-            <div class="pl-row">
-              <div class="pl-k">Certification</div>
-              <div class="pl-v"><span class="cert-badge">SDVOSB / VOSB <span style="color:var(--muted);font-weight:400">· SBA-certified</span></span></div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">UEI</div>
-              <div class="pl-v code">VSEPRK1QDU39</div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">CAGE</div>
-              <div class="pl-v code">20GL4</div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">SAM.gov</div>
-              <div class="pl-v">Registered</div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">NAICS</div>
-              <div class="pl-v">
-                <div class="naics-tags">
-                  <b class="primary">541512</b><b>541511</b><b>541513</b><b>541519</b><b>518210</b><b>611420</b>
-                </div>
-              </div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">Established</div>
-              <div class="pl-v">April 30, 2026 · Wisconsin</div>
-            </div>
-            <div class="pl-row">
-              <div class="pl-k">Location</div>
-              <div class="pl-v">Milwaukee, Wisconsin</div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+April 30, 2026 · Wisconsin
 
-    <!-- CAPABILITIES -->
-    <section id="capabilities" class="section band">
-      <div class="wrap">
-        <div class="sec-kicker">Core capabilities</div>
-        <h2 class="sec-title">What we deliver</h2>
-        <p class="sec-intro">End-to-end technology services for organizations that need reliable, scalable infrastructure and modern software, mapped to the NAICS codes RESIL is registered under.</p>
+Location
 
-        <div class="cap-grid">
-          <div class="cap">
-            <div class="cap-ico"><svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4 4 0 003 15z"/></svg></div>
-            <h3>Cloud Infrastructure &amp; DevOps</h3>
-            <p>AWS architecture, deployment, and managed operations. Docker containerization, Kubernetes and EKS support, CI/CD pipelines, Terraform infrastructure as code, and secure system configuration.</p>
-            <div class="codes"><b>518210</b><b>541513</b></div>
-          </div>
-          <div class="cap">
-            <div class="cap-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <h3>Custom Software Development</h3>
-            <p>Full-stack web and API development. Serverless architectures, microservices, and automated delivery pipelines built around your operational needs.</p>
-            <div class="codes"><b>541511</b><b>541512</b></div>
-          </div>
-          <div class="cap">
-            <div class="cap-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <h3>IT Consulting &amp; Management Support</h3>
-            <p>IT management and network support, help desk and technical support, technology roadmap planning, and legacy system modernization for government and commercial clients.</p>
-            <div class="codes"><b>541519</b><b>541512</b></div>
-          </div>
-          <div class="cap">
-            <div class="cap-ico"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-            <h3>Technical Documentation &amp; Training</h3>
-            <p>Clear, maintainable documentation for technical and non-technical stakeholders, plus hands-on cloud and DevOps enablement for teams adopting modern infrastructure.</p>
-            <div class="codes"><b>611420</b></div>
-          </div>
-        </div>
-      </div>
-    </section>
+Milwaukee, Wisconsin
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section">
-      <div class="wrap">
-        <div class="sec-kicker">Project portfolio</div>
-        <h2 class="sec-title">Work that demonstrates the capability</h2>
-        <p class="sec-intro">Hands-on cloud and software projects, built and shipped to show current technical depth. This portfolio grows as new work is completed.</p>
+Core capabilities
 
-        <div class="proj-grid">
+## What we deliver
 
-          <article class="proj">
-            <div class="proj-top"><span class="proj-area">Cloud · AWS · Python</span><span class="status live">Live</span></div>
-            <h3>Cloud Cost &amp; Resource Monitoring Dashboard</h3>
-            <p>Full-stack web app connecting to the AWS Cost Explorer API, showing 30 days of real-time billing data grouped by service in interactive charts. Built on a three-tier architecture with AWS IAM authentication.</p>
-            <div class="stack"><span>Python</span><span>Flask</span><span>Boto3</span><span>Cost Explorer</span><span>IAM</span><span>Chart.js</span></div>
-            <a class="proj-link" href="https://github.com/RESILTechnologySolutions/resil-cloud-dashboard" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-          </article>
+End-to-end technology services for organizations that need reliable, scalable infrastructure and modern software, mapped to the NAICS codes RESIL is registered under.
 
-          <article class="proj">
-            <div class="proj-top"><span class="proj-area">AI · SaaS · Full Stack</span><span class="status live">Live</span></div>
-            <h3>Math Tutor TG</h3>
-            <p>AI-powered math tutoring web app giving step-by-step help, with user accounts, free and premium usage tiers, file uploads, two-factor login, and Stripe subscription billing.</p>
-            <div class="stack"><span>Python</span><span>Flask</span><span>SQLite</span><span>Gemini API</span><span>Stripe</span><span>Flask-Login</span></div>
-            <a class="proj-link" href="http://www.mathtutortg.org" target="_blank" rel="noopener">View live app <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-          </article>
+### Cloud Infrastructure & DevOps
 
-          <article class="proj">
-            <div class="proj-top"><span class="proj-area">Serverless · AWS · Python</span><span class="status live">Live</span></div>
-            <h3>Serverless REST API</h3>
-            <p>Fully serverless REST API on AWS with no servers to manage. Creates and retrieves items over HTTP, built with Lambda, API Gateway, and DynamoDB in an auto-scaling, pay-per-request design.</p>
-            <div class="stack"><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span><span>Python</span><span>Boto3</span><span>IAM</span></div>
-            <a class="proj-link" href="https://github.com/RESILTechnologySolutions/resil-serverless-api" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-          </article>
+AWS architecture, deployment, and managed operations. Docker containerization, Kubernetes and EKS support, CI/CD pipelines, Terraform infrastructure as code, and secure system configuration.
 
-          <article class="proj">
-            <div class="proj-top"><span class="proj-area">IaC · Terraform</span><span class="status prog">In progress</span></div>
-            <h3>Multi-Environment Infrastructure as Code</h3>
-            <p>Terraform modules provisioning a complete AWS environment, VPC, subnets, security groups, EC2, and RDS, across dev, staging, and production workspaces.</p>
-            <div class="stack"><span>Terraform</span><span>VPC</span><span>EC2</span><span>RDS</span><span>S3</span></div>
-          </article>
+**518210****541513**
 
-          <article class="proj">
-            <div class="proj-top"><span class="proj-area">Containers · Kubernetes</span><span class="status prog">In progress</span></div>
-            <h3>Containerized Application Deployment</h3>
-            <p>Dockerized multi-service application deployed to AWS ECS, with load balancing, auto-scaling, and centralized CloudWatch logging.</p>
-            <div class="stack"><span>Docker</span><span>ECS</span><span>CloudWatch</span><span>ALB</span></div>
-          </article>
+### Custom Software Development
 
-        </div>
-      </div>
-    </section>
+Full-stack web and API development. Serverless architectures, microservices, and automated delivery pipelines built around your operational needs.
 
-    <!-- FIRM -->
-    <section id="firm" class="section band">
-      <div class="wrap">
-        <div class="sec-kicker">The firm</div>
-        <h2 class="sec-title">RESIL Technology Solutions</h2>
-        <div class="firm-grid">
-          <div class="firm-body">
-            <p>RESIL Technology Solutions LLC is an <strong>SBA-certified Service-Disabled Veteran-Owned Small Business</strong> headquartered in Milwaukee, Wisconsin, established in April 2026. We focus on cloud infrastructure, DevOps support, secure system configuration, and IT consulting for government and commercial clients.</p>
-            <p>As a founder-led firm pursuing federal subcontracting work, every engagement gets direct, hands-on attention from start to finish. We partner with prime contractors across the Milwaukee metro and Wisconsin to deliver technical capability where it is needed most.</p>
-            <p>RESIL combines <strong>computer science fundamentals</strong> with hands-on experience across AWS, Docker, Kubernetes, Terraform, GitHub Actions, and Linux, backed by disciplined documentation practices and an active certification pathway.</p>
-            <p>We hold registered NAICS codes covering computer systems design, custom software development, computer facilities management, cloud infrastructure and hosting, and computer training.</p>
-          </div>
-          <div class="road">
-            <div class="road-head">Certification pathway</div>
-            <div class="road-item">
-              <span class="road-mark done"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
-              <span class="road-txt"><b>SDVOSB / VOSB certified</b><span>SBA VetCert program</span></span>
-            </div>
-            <div class="road-item">
-              <span class="road-mark done"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
-              <span class="road-txt"><b>SAM.gov registration</b><span>UEI VSEPRK1QDU39 · CAGE 20GL4</span></span>
-            </div>
-            <div class="road-item">
-              <span class="road-mark pend" aria-hidden="true"></span>
-              <span class="road-txt"><b>AWS Cloud Practitioner</b><span>Target Q3 2026</span></span>
-            </div>
-            <div class="road-item">
-              <span class="road-mark pend" aria-hidden="true"></span>
-              <span class="road-txt"><b>AWS Solutions Architect, Associate</b><span>Target Q4 2026</span></span>
-            </div>
-            <div class="road-item">
-              <span class="road-mark pend" aria-hidden="true"></span>
-              <span class="road-txt"><b>HashiCorp Terraform Associate</b><span>Target Q1 2027</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+**541511****541512**
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="wrap">
-        <div class="sec-kicker">Contact</div>
-        <h2 class="sec-title">Let's work together</h2>
-        <p class="sec-intro">Looking for a subcontractor, or need cloud and IT support? Send a note and we will respond within one business day.</p>
+### IT Consulting & Management Support
 
-        <div class="contact-grid">
-          <div class="cinfo">
-            <div class="crow">
-              <span class="crow-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-              <div><small>Email</small><div class="cval"><a href="mailto:contact@resiltechnologysolutions.com">contact@resiltechnologysolutions.com</a></div></div>
-            </div>
-            <div class="crow">
-              <span class="crow-ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
-              <div><small>Phone</small><div class="cval"><a href="tel:+19162076875">916-207-6875</a></div></div>
-            </div>
-            <div class="crow">
-              <span class="crow-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <div><small>Location</small><div class="cval">Milwaukee, Wisconsin</div></div>
-            </div>
-            <div class="crow">
-              <span class="crow-ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 20V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v15"/></svg></span>
-              <div><small>Registration</small><div class="cval code">UEI VSEPRK1QDU39 · CAGE 20GL4</div></div>
-            </div>
-            <div class="crow">
-              <span class="crow-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6M9 15l3 3 3-3"/></svg></span>
-              <div><small>Capability statement</small><div class="cval"><a href="CapabilityStatement.pdf" target="_blank" rel="noopener">Download PDF</a></div></div>
-            </div>
-          </div>
+IT management and network support, help desk and technical support, technology roadmap planning, and legacy system modernization for government and commercial clients.
 
-          <form class="contact" action="https://formsubmit.co/contact@resiltechnologysolutions.com" method="POST">
-            <input type="hidden" name="_subject" value="New inquiry from resiltechnologysolutions.com" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="text" name="_honey" style="display:none" />
-            <div class="f2">
-              <div class="fg"><label for="fname">First name</label><input id="fname" type="text" name="first_name" placeholder="Jane" required /></div>
-              <div class="fg"><label for="lname">Last name</label><input id="lname" type="text" name="last_name" placeholder="Smith" required /></div>
-            </div>
-            <div class="fg"><label for="email">Email address</label><input id="email" type="email" name="email" placeholder="jane@company.com" required /></div>
-            <div class="fg"><label for="org">Organization</label><input id="org" type="text" name="organization" placeholder="Company or agency name" /></div>
-            <div class="fg"><label for="interest">Area of interest</label>
-              <select id="interest" name="area_of_interest">
-                <option value="">Select one</option>
-                <option>Cloud infrastructure / DevOps</option>
-                <option>Software development</option>
-                <option>IT consulting</option>
-                <option>Subcontracting opportunity</option>
-                <option>Technical documentation / training</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="fg"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project or opportunity." required></textarea></div>
-            <button type="submit" class="btn btn-primary">Send message</button>
-          </form>
-        </div>
-      </div>
-    </section>
+**541519****541512**
 
-  </main>
+### Technical Documentation & Training
 
-  <footer class="site">
-    <div class="wrap foot-inner">
-      <a href="#top" class="foot-brand" aria-label="RESIL Technology Solutions home">
-        <span class="brand-mark">R</span>
-        <span class="brand-name"><b>RESIL</b><small>Technology Solutions</small></span>
-      </a>
-      <div class="foot-copy">© 2026 RESIL Technology Solutions LLC · Milwaukee, WI · All rights reserved</div>
-      <div class="foot-reg">
-        NAICS 541512 · 541511 · 541513 · 541519 · 518210 · 611420<br/>
-        <span>UEI VSEPRK1QDU39 · CAGE 20GL4</span>
-      </div>
-    </div>
-  </footer>
+Clear, maintainable documentation for technical and non-technical stakeholders, plus hands-on cloud and DevOps enablement for teams adopting modern infrastructure.
 
-</body>
-</html>
+**611420**
+
+Project portfolio
+
+## Work that demonstrates the capability
+
+Hands-on cloud and software projects, built and shipped to show current technical depth. This portfolio grows as new work is completed.
+
+Cloud · AWS · PythonLive
+
+### Cloud Cost & Resource Monitoring Dashboard
+
+Full-stack web app connecting to the AWS Cost Explorer API, showing 30 days of real-time billing data grouped by service in interactive charts. Built on a three-tier architecture with AWS IAM authentication.
+
+PythonFlaskBoto3Cost ExplorerIAMChart.js
+
+[View on GitHub](https://github.com/RESILTechnologySolutions/resil-cloud-dashboard)
+
+AI · SaaS · Full StackLive
+
+### Math Tutor TG
+
+AI-powered math tutoring web app giving step-by-step help, with user accounts, free and premium usage tiers, file uploads, two-factor login, and Stripe subscription billing.
+
+PythonFlaskSQLiteGemini APIStripeFlask-Login
+
+[View live app](http://www.mathtutortg.org)
+
+Serverless · AWS · PythonLive
+
+### Serverless REST API
+
+Fully serverless REST API on AWS with no servers to manage. Creates and retrieves items over HTTP, built with Lambda, API Gateway, and DynamoDB in an auto-scaling, pay-per-request design.
+
+LambdaAPI GatewayDynamoDBPythonBoto3IAM
+
+[View on GitHub](https://github.com/RESILTechnologySolutions/resil-serverless-api)
+
+IaC · TerraformIn progress
+
+### Multi-Environment Infrastructure as Code
+
+Terraform modules provisioning a complete AWS environment, VPC, subnets, security groups, EC2, and RDS, across dev, staging, and production workspaces.
+
+TerraformVPCEC2RDSS3
+
+Containers · KubernetesIn progress
+
+### Containerized Application Deployment
+
+Dockerized multi-service application deployed to AWS ECS, with load balancing, auto-scaling, and centralized CloudWatch logging.
+
+DockerECSCloudWatchALB
+
+The firm
+
+## RESIL Technology Solutions
+
+RESIL Technology Solutions LLC is an **SBA-certified Service-Disabled Veteran-Owned Small Business** headquartered in Milwaukee, Wisconsin, established in April 2026. We focus on cloud infrastructure, DevOps support, secure system configuration, and IT consulting for government and commercial clients.
+
+As a founder-led firm pursuing federal subcontracting work, every engagement gets direct, hands-on attention from start to finish. We partner with prime contractors across the Milwaukee metro and Wisconsin to deliver technical capability where it is needed most.
+
+RESIL combines **computer science fundamentals** with hands-on experience across AWS, Docker, Kubernetes, Terraform, GitHub Actions, and Linux, backed by disciplined documentation practices and an active certification pathway.
+
+We hold registered NAICS codes covering computer systems design, custom software development, computer facilities management, cloud infrastructure and hosting, and computer training.
+
+Certification pathway
+
+**SDVOSB / VOSB certified**SBA VetCert program
+
+**SAM.gov registration**UEI VSEPRK1QDU39 · CAGE 20GL4
+
+**AWS Cloud Practitioner**Target Q3 2026
+
+**AWS Solutions Architect, Associate**Target Q4 2026
+
+**HashiCorp Terraform Associate**Target Q1 2027
+
+Contact
+
+## Let's work together
+
+Looking for a subcontractor, or need cloud and IT support? Send a note and we will respond within one business day.
+
+Email
+
+[contact@resiltechnologysolutions.com](mailto:contact@resiltechnologysolutions.com)
+
+Phone
+
+916-207-6875
+
+Location
+
+Milwaukee, Wisconsin
+
+Registration
+
+UEI VSEPRK1QDU39 · CAGE 20GL4
+
+Capability statement
+
+[Download PDF](CapabilityStatement.pdf)
+
+First name
+
+Last name
+
+Email address
+
+Organization
+
+Area of interest
+
+Message
+
+[RESIL Technology Solutions **RESIL**Technology Solutions](#top)
+
+© 2026 RESIL Technology Solutions LLC · Milwaukee, WI · All rights reserved
+
+SBA-certified Service-Disabled Veteran-Owned Small Business
+
+NAICS 541512 · 541511 · 541513 · 541519 · 518210 · 611420\
+UEI VSEPRK1QDU39 · CAGE 20GL4
